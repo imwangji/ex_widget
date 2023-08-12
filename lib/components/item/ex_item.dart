@@ -20,7 +20,7 @@ class _EXItemState extends State<EXItem> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.symmetric(horizontal: 32, vertical: 25),
+      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 25),
       child: Flex(
         direction: Axis.horizontal,
         crossAxisAlignment: CrossAxisAlignment.start,
