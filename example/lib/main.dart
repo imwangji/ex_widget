@@ -1,4 +1,5 @@
 import 'package:ex_widget/components/button/ex_button.dart';
+import 'package:ex_widget/components/card/ex_card.dart';
 import 'package:ex_widget/themes/ex_default_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -89,10 +90,9 @@ class _MyHomePageState extends State<MyHomePage> {
               isLoading: true,
               onPressed: () {},
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            EXCard(
+              child: Text("123"),
+            )
           ],
         ),
       ),
