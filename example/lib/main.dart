@@ -1,6 +1,7 @@
 import 'package:ex_widget/components/button/ex_button.dart';
 import 'package:ex_widget/components/card/ex_card.dart';
 import 'package:ex_widget/components/divider/ex_divider.dart';
+import 'package:ex_widget/components/input_item/ex_input_item.dart';
 import 'package:ex_widget/themes/ex_default_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -99,6 +100,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("123"),
             ),
             EXDivider(),
+            EXInputItem(
+              label: "标题",
+              hintText: "请输入",
+            ),
           ],
         ),
       ),
