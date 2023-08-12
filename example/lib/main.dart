@@ -90,6 +90,8 @@ class _MyHomePageState extends State<MyHomePage> {
             EXButton(
               text: "hello",
               isLoading: true,
+              isBlock: false,
+              exButtonSize: EXButtonSize.mini,
               onPressed: () {},
             ),
             EXDivider(),
