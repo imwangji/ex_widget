@@ -2,7 +2,9 @@ import 'package:ex_widget/components/button/ex_button.dart';
 import 'package:ex_widget/components/card/ex_card.dart';
 import 'package:ex_widget/components/divider/ex_divider.dart';
 import 'package:ex_widget/components/input_item/ex_input_item.dart';
+import 'package:ex_widget/components/item/ex_item.dart';
 import 'package:ex_widget/themes/ex_default_theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -101,8 +103,25 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             EXDivider(),
             EXInputItem(
+              prefix: Icon(
+                CupertinoIcons.add_circled,
+                size: 50,
+              ),
               label: "标题",
               hintText: "请输入",
+            ),
+            EXDivider(),
+            EXItem(
+              prefix: Icon(
+                CupertinoIcons.add_circled,
+                size: 50,
+              ),
+              label: "标题",
+              contentText: "内容",
+              suffix: Icon(
+                CupertinoIcons.add_circled,
+                size: 50,
+              ),
             ),
           ],
         ),
