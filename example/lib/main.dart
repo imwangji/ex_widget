@@ -82,6 +82,12 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             EXButton(
               text: "hello",
+              onPressed: () {},
+            ),
+            EXButton(
+              text: "hello",
+              isLoading: true,
+              onPressed: () {},
             ),
             Text(
               '$_counter',
