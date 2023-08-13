@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:ex_widget/extensions/text.extension.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -55,30 +53,30 @@ class _EXButtonState extends State<EXButton> {
   getFontSizeByEXButtonSize() {
     switch (widget.exButtonSize) {
       case EXButtonSize.large:
-        return 32;
+        return 16.0;
       case EXButtonSize.normal:
-        return 32;
+        return 16.0;
       case EXButtonSize.small:
-        return 28;
+        return 16.0;
       case EXButtonSize.mini:
-        return 24;
+        return 16.0;
       default:
-        return 32;
+        return 16.0;
     }
   }
 
   getPaddingByEXButtonSize() {
     switch (widget.exButtonSize) {
       case EXButtonSize.large:
-        return 90;
+        return 45.0;
       case EXButtonSize.normal:
-        return 90;
+        return 45.0;
       case EXButtonSize.small:
-        return 60;
+        return 45.0;
       case EXButtonSize.mini:
-        return 30;
+        return 45.0;
       default:
-        return 90;
+        return 45.0;
     }
   }
 
@@ -126,19 +124,19 @@ class _EXButtonState extends State<EXButton> {
 
   getSizeByPropsEXButtonSize() {
     if (widget.isBlock!) {
-      return MaterialStateProperty.all(const Size(double.infinity, 100));
+      return MaterialStateProperty.all(const Size(double.infinity, 50));
     } else {
       switch (widget.exButtonSize) {
         case EXButtonSize.large:
-          return MaterialStateProperty.all(const Size.fromHeight(100));
+          return MaterialStateProperty.all(const Size.fromHeight(50));
         case EXButtonSize.normal:
-          return MaterialStateProperty.all(const Size.fromHeight(100));
+          return MaterialStateProperty.all(const Size.fromHeight(50));
         case EXButtonSize.small:
-          return MaterialStateProperty.all(const Size.fromHeight(80));
+          return MaterialStateProperty.all(const Size.fromHeight(40));
         case EXButtonSize.mini:
-          return MaterialStateProperty.all(const Size.fromHeight(56));
+          return MaterialStateProperty.all(const Size.fromHeight(28));
         default:
-          return MaterialStateProperty.all(const Size.fromHeight(100));
+          return MaterialStateProperty.all(const Size.fromHeight(50));
       }
     }
   }
@@ -161,7 +159,7 @@ class _EXButtonState extends State<EXButton> {
         minimumSize: getSizeByPropsEXButtonSize(),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(15),
             side: getBorderSideByEXButtonType(),
           ),
         ),

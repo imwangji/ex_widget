@@ -4,7 +4,7 @@ class EXDivider extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   const EXDivider({
     super.key,
-    this.padding = const EdgeInsets.symmetric(vertical: 15, horizontal: 32),
+    this.padding = const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
   });
 
   @override

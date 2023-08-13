@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
             EXInputItem(
               prefix: Icon(
                 CupertinoIcons.add_circled,
-                size: 50,
+                size: 22,
               ),
               label: "标题",
               hintText: "请输入",
@@ -114,13 +114,13 @@ class _MyHomePageState extends State<MyHomePage> {
             EXItem(
               prefix: Icon(
                 CupertinoIcons.add_circled,
-                size: 50,
+                size: 22,
               ),
               label: "标题",
               contentText: "内容",
               suffix: Icon(
                 CupertinoIcons.add_circled,
-                size: 50,
+                size: 22,
               ),
             ),
           ],

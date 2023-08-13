@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:ex_widget/extensions/padding.extension.dart';
 import 'package:ex_widget/extensions/text.extension.dart';
 import 'package:flutter/material.dart';
@@ -20,17 +18,17 @@ class _EXItemState extends State<EXItem> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 25),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 13),
       child: Flex(
         direction: Axis.horizontal,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          widget.suffix == null ? Container() : widget.suffix!.pr(32),
-          Text(widget.label).fontSize(32).pr(32),
+          widget.suffix == null ? Container() : widget.suffix!.pr(16),
+          Text(widget.label).fontSize(16).pr(16),
           Expanded(
             child: Align(
               alignment: Alignment.centerRight,
-              child: Text(widget.contentText!).fontSize(32).color(const Color(0xff808080)).pr(32),
+              child: Text(widget.contentText!).fontSize(16).color(const Color(0xff808080)).pr(16),
             ),
           ),
           widget.suffix == null ? Container() : widget.suffix!,

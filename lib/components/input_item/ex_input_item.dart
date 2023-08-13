@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:ex_widget/extensions/padding.extension.dart';
 import 'package:ex_widget/extensions/text.extension.dart';
 import 'package:flutter/material.dart';
@@ -28,29 +26,31 @@ class _EXInputItemState extends State<EXInputItem> {
         direction: Axis.horizontal,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          widget.prefix == null ? Container() : widget.prefix!.pr(32),
-          Text(widget.label).fontSize(32).pr(32),
+          widget.prefix == null ? Container() : widget.prefix!.pr(16),
+          Text(widget.label).fontSize(16).pr(16),
           Flexible(
             child: TextField(
+              textAlign: TextAlign.start,
               minLines: 1,
               maxLines: null,
               style: const TextStyle(
-                fontSize: 32,
+                fontSize: 16,
                 color: Colors.black,
               ),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.zero,
+                isDense: true,
                 border: InputBorder.none,
                 hintText: widget.hintText,
                 hintStyle: const TextStyle(
                   color: Color(0xffb3b3b3),
-                  fontSize: 32,
+                  fontSize: 16,
                 ),
               ),
             ),
           ),
         ],
-      ).px(32).py(25),
+      ).px(16).py(13),
     );
   }
 }
