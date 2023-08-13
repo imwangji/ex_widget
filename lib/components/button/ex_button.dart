@@ -147,7 +147,7 @@ class _EXButtonState extends State<EXButton> {
     if (widget.isLoading!) {
       return getLoadingIndicator();
     }
-    if (widget.text.isDefinedAndNotNull) {
+    if (widget.text != null) {
       return Text(widget.text!).fontSize(getFontSizeByEXButtonSize()).fontWeight(FontWeight.w600);
     }
     return widget.child;

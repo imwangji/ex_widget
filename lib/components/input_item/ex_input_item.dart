@@ -28,7 +28,7 @@ class _EXInputItemState extends State<EXInputItem> {
         direction: Axis.horizontal,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          widget.prefix.isNull ? Container() : widget.prefix!.pr(32),
+          widget.prefix == null ? Container() : widget.prefix!.pr(32),
           Text(widget.label).fontSize(32).pr(32),
           Flexible(
             child: TextField(

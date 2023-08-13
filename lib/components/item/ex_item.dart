@@ -25,7 +25,7 @@ class _EXItemState extends State<EXItem> {
         direction: Axis.horizontal,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          widget.suffix.isNull ? Container() : widget.suffix!.pr(32),
+          widget.suffix == null ? Container() : widget.suffix!.pr(32),
           Text(widget.label).fontSize(32).pr(32),
           Expanded(
             child: Align(
@@ -33,7 +33,7 @@ class _EXItemState extends State<EXItem> {
               child: Text(widget.contentText!).fontSize(32).color(const Color(0xff808080)).pr(32),
             ),
           ),
-          widget.suffix.isNull ? Container() : widget.suffix!,
+          widget.suffix == null ? Container() : widget.suffix!,
         ],
       ),
     );
