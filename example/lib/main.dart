@@ -4,6 +4,7 @@ import 'package:ex_widget/components/cta_card/ex_cta_card.dart';
 import 'package:ex_widget/components/divider/ex_divider.dart';
 import 'package:ex_widget/components/input_item/ex_input_item.dart';
 import 'package:ex_widget/components/item/ex_item.dart';
+import 'package:ex_widget/components/section_header/ex_section_header.dart';
 import 'package:ex_widget/extensions/text.extension.dart';
 import 'package:ex_widget/themes/ex_default_theme.dart';
 import 'package:flutter/cupertino.dart';
@@ -88,6 +89,14 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            EXSectionHeader(
+              title: "队伍广场",
+              action: EXButton(
+                text: "创建",
+                size: EXSize.small,
+                onPressed: () {},
+              ),
+            ),
             EXCTACard(
               title: "创建一个自己的队伍创建一个自己的队伍",
               buttonText: "创建",
@@ -108,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
               text: "hello",
               isLoading: true,
               isBlock: false,
-              size: EXButtonSize.mini,
+              size: EXSize.mini,
               onPressed: () {},
             ),
             EXDivider(),

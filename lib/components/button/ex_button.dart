@@ -2,7 +2,7 @@ import 'package:ex_widget/extensions/text.extension.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-enum EXButtonSize {
+enum EXSize {
   large,
   normal,
   small,
@@ -25,7 +25,7 @@ enum EXButtonState {
 class EXButton extends StatefulWidget {
   final String? text;
   final Widget? child;
-  final EXButtonSize? size;
+  final EXSize? size;
   final EXButtonType? exButtonType;
   final EXButtonState? exButtonState;
   final bool? isLoading;
@@ -36,7 +36,7 @@ class EXButton extends StatefulWidget {
     this.text,
     super.key,
     this.child,
-    this.size = EXButtonSize.normal,
+    this.size = EXSize.normal,
     this.exButtonState = EXButtonState.nomal,
     this.exButtonType = EXButtonType.fill,
     this.isBlock = true,
@@ -52,13 +52,13 @@ class EXButton extends StatefulWidget {
 class _EXButtonState extends State<EXButton> {
   getFontSizeByEXButtonSize() {
     switch (widget.size) {
-      case EXButtonSize.large:
+      case EXSize.large:
         return 16.0;
-      case EXButtonSize.normal:
+      case EXSize.normal:
         return 16.0;
-      case EXButtonSize.small:
+      case EXSize.small:
         return 14.0;
-      case EXButtonSize.mini:
+      case EXSize.mini:
         return 12.0;
       default:
         return 16.0;
@@ -67,13 +67,13 @@ class _EXButtonState extends State<EXButton> {
 
   getPaddingByEXButtonSize() {
     switch (widget.size) {
-      case EXButtonSize.large:
+      case EXSize.large:
         return 45.0;
-      case EXButtonSize.normal:
+      case EXSize.normal:
         return 45.0;
-      case EXButtonSize.small:
+      case EXSize.small:
         return 45.0;
-      case EXButtonSize.mini:
+      case EXSize.mini:
         return 45.0;
       default:
         return 45.0;
@@ -127,13 +127,13 @@ class _EXButtonState extends State<EXButton> {
       return MaterialStateProperty.all(const Size(double.infinity, 50));
     } else {
       switch (widget.size) {
-        case EXButtonSize.large:
+        case EXSize.large:
           return MaterialStateProperty.all(const Size.fromHeight(50));
-        case EXButtonSize.normal:
+        case EXSize.normal:
           return MaterialStateProperty.all(const Size.fromHeight(50));
-        case EXButtonSize.small:
+        case EXSize.small:
           return MaterialStateProperty.all(const Size.fromHeight(40));
-        case EXButtonSize.mini:
+        case EXSize.mini:
           return MaterialStateProperty.all(const Size.fromHeight(28));
         default:
           return MaterialStateProperty.all(const Size.fromHeight(50));

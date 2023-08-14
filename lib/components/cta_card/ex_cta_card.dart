@@ -35,7 +35,7 @@ class _EXCTACardState extends State<EXCTACard> {
                 child: Text(widget.title).fontSize(16).fontWeight(FontWeight.bold),
               ),
               EXButton(
-                size: EXButtonSize.small,
+                size: EXSize.small,
                 text: widget.buttonText,
                 onPressed: () {},
               ).pl(30),
