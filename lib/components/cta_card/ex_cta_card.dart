@@ -46,7 +46,12 @@ class _EXCTACardState extends State<EXCTACard> {
               : const EXDivider(
                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0),
                 ),
-          widget.footer ?? Container(),
+          widget.footer != null
+              ? ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 48),
+                  child: widget.footer,
+                )
+              : Container(),
         ],
       ),
     );
