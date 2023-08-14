@@ -22,7 +22,7 @@ class _EXCardState extends State<EXCard> {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: widget.backgroundColor,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(24),
         border: Border.all(color: widget.borderColor!, width: .5),
       ),
       child: widget.child,
