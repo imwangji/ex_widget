@@ -141,12 +141,20 @@ class _EXButtonState extends State<EXButton> {
     }
   }
 
+  getButtonTextColorByType() {
+    if (widget.exButtonType == EXButtonType.stroke) {
+      return Theme.of(context).primaryColor;
+    } else {
+      return Colors.white;
+    }
+  }
+
   renderContent() {
     if (widget.isLoading!) {
       return getLoadingIndicator();
     }
     if (widget.text != null) {
-      return Text(widget.text!).fontSize(getFontSizeByEXButtonSize()).fontWeight(FontWeight.w600);
+      return Text(widget.text!).fontSize(getFontSizeByEXButtonSize()).fontWeight(FontWeight.w600).color(getButtonTextColorByType());
     }
     return widget.child;
   }
@@ -155,6 +163,7 @@ class _EXButtonState extends State<EXButton> {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
+        backgroundColor: MaterialStatePropertyAll(getBackgroundByEXButtonType()),
         elevation: MaterialStateProperty.all(0),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
