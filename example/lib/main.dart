@@ -4,6 +4,7 @@ import 'package:ex_widget/components/cta_card/ex_cta_card.dart';
 import 'package:ex_widget/components/divider/ex_divider.dart';
 import 'package:ex_widget/components/input_item/ex_input_item.dart';
 import 'package:ex_widget/components/item/ex_item.dart';
+import 'package:ex_widget/extensions/text.extension.dart';
 import 'package:ex_widget/themes/ex_default_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -88,8 +89,14 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             EXCTACard(
-              title: "创建一个自己的队伍",
+              title: "创建一个自己的队伍创建一个自己的队伍",
               buttonText: "创建",
+              footer: Row(
+                children: [
+                  const Text("如果你没有发现合适的队伍，你可以在这里创建一个").color(Colors.black54),
+                ],
+              ),
+              onTap: () {},
             ),
             EXDivider(),
             EXButton(

@@ -1,5 +1,6 @@
 import 'package:ex_widget/components/button/ex_button.dart';
 import 'package:ex_widget/components/card/ex_card.dart';
+import 'package:ex_widget/components/divider/ex_divider.dart';
 import 'package:ex_widget/extensions/padding.extension.dart';
 import 'package:ex_widget/extensions/text.extension.dart';
 import 'package:flutter/material.dart';
@@ -7,10 +8,14 @@ import 'package:flutter/material.dart';
 class EXCTACard extends StatefulWidget {
   final String title;
   final String buttonText;
+  final Widget? footer;
+  final VoidCallback onTap;
   const EXCTACard({
     super.key,
     required this.title,
     required this.buttonText,
+    this.footer,
+    required this.onTap,
   });
 
   @override
@@ -36,7 +41,12 @@ class _EXCTACardState extends State<EXCTACard> {
               ).pl(30),
             ],
           ),
-          Row(),
+          widget.footer == null
+              ? Container()
+              : const EXDivider(
+                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0),
+                ),
+          widget.footer ?? Container(),
         ],
       ),
     );
