@@ -1,5 +1,6 @@
 import 'package:ex_widget/components/button/ex_button.dart';
 import 'package:ex_widget/components/card/ex_card.dart';
+import 'package:ex_widget/components/cta_card/ex_cta_card.dart';
 import 'package:ex_widget/components/divider/ex_divider.dart';
 import 'package:ex_widget/components/input_item/ex_input_item.dart';
 import 'package:ex_widget/components/item/ex_item.dart';
@@ -66,7 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
+      body: Padding(
+        padding: EdgeInsetsDirectional.all(16),
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
@@ -85,6 +87,11 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            EXCTACard(
+              title: "创建一个自己的队伍",
+              buttonText: "创建",
+            ),
+            EXDivider(),
             EXButton(
               text: "hello",
               onPressed: () {},
@@ -94,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
               text: "hello",
               isLoading: true,
               isBlock: false,
-              exButtonSize: EXButtonSize.mini,
+              size: EXButtonSize.mini,
               onPressed: () {},
             ),
             EXDivider(),

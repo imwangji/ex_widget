@@ -25,7 +25,7 @@ enum EXButtonState {
 class EXButton extends StatefulWidget {
   final String? text;
   final Widget? child;
-  final EXButtonSize? exButtonSize;
+  final EXButtonSize? size;
   final EXButtonType? exButtonType;
   final EXButtonState? exButtonState;
   final bool? isLoading;
@@ -36,7 +36,7 @@ class EXButton extends StatefulWidget {
     this.text,
     super.key,
     this.child,
-    this.exButtonSize = EXButtonSize.normal,
+    this.size = EXButtonSize.normal,
     this.exButtonState = EXButtonState.nomal,
     this.exButtonType = EXButtonType.fill,
     this.isBlock = true,
@@ -51,22 +51,22 @@ class EXButton extends StatefulWidget {
 
 class _EXButtonState extends State<EXButton> {
   getFontSizeByEXButtonSize() {
-    switch (widget.exButtonSize) {
+    switch (widget.size) {
       case EXButtonSize.large:
         return 16.0;
       case EXButtonSize.normal:
         return 16.0;
       case EXButtonSize.small:
-        return 16.0;
+        return 14.0;
       case EXButtonSize.mini:
-        return 16.0;
+        return 12.0;
       default:
         return 16.0;
     }
   }
 
   getPaddingByEXButtonSize() {
-    switch (widget.exButtonSize) {
+    switch (widget.size) {
       case EXButtonSize.large:
         return 45.0;
       case EXButtonSize.normal:
@@ -126,7 +126,7 @@ class _EXButtonState extends State<EXButton> {
     if (widget.isBlock!) {
       return MaterialStateProperty.all(const Size(double.infinity, 50));
     } else {
-      switch (widget.exButtonSize) {
+      switch (widget.size) {
         case EXButtonSize.large:
           return MaterialStateProperty.all(const Size.fromHeight(50));
         case EXButtonSize.normal:
@@ -156,7 +156,6 @@ class _EXButtonState extends State<EXButton> {
     return ElevatedButton(
       style: ButtonStyle(
         elevation: MaterialStateProperty.all(0),
-        minimumSize: getSizeByPropsEXButtonSize(),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
