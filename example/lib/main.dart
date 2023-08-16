@@ -38,18 +38,72 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  var componentList = [
+    EXSectionHeader(
+      title: "队伍广场",
+      action: EXButton(
+        text: "创建",
+        size: EXSize.small,
+        exButtonType: EXButtonType.stroke,
+        onPressed: () {},
+      ),
+    ),
+    EXCTACard(
+      title: "创建一个自己的队伍创建一个自己的队伍",
+      buttonText: "创建",
+      footer: Row(
+        children: [
+          const Text("如果你没有发现合适的队伍，你可以在这里创建一个").color(Colors.black54),
+        ],
+      ),
+      onTap: () {},
+    ),
+    EXDivider(),
+    EXButton(
+      text: "hello",
+      onPressed: () {},
+    ),
+    EXDivider(),
+    EXButton(
+      text: "hello",
+      size: EXSize.small,
+      onPressed: () {},
+    ),
+    EXDivider(),
+    EXButton(
+      text: "hello",
+      isLoading: true,
+      isBlock: false,
+      size: EXSize.mini,
+      onPressed: () {},
+    ),
+    EXDivider(),
+    EXCard(
+      child: Text("123"),
+    ),
+    EXDivider(),
+    EXInputItem(
+      prefix: Icon(
+        CupertinoIcons.add_circled,
+        size: 22,
+      ),
+      label: "标题",
+      hintText: "请输入",
+    ),
+    EXDivider(),
+    EXItem(
+      prefix: Icon(
+        CupertinoIcons.add_circled,
+        size: 22,
+      ),
+      label: "标题",
+      contentText: "内容",
+      suffix: Icon(
+        CupertinoIcons.add_circled,
+        size: 22,
+      ),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -73,81 +127,8 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: EdgeInsetsDirectional.all(16),
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            EXSectionHeader(
-              title: "队伍广场",
-              action: EXButton(
-                text: "创建",
-                size: EXSize.small,
-                exButtonType: EXButtonType.stroke,
-                onPressed: () {},
-              ),
-            ),
-            EXCTACard(
-              title: "创建一个自己的队伍创建一个自己的队伍",
-              buttonText: "创建",
-              footer: Row(
-                children: [
-                  const Text("如果你没有发现合适的队伍，你可以在这里创建一个").color(Colors.black54),
-                ],
-              ),
-              onTap: () {},
-            ),
-            EXDivider(),
-            EXButton(
-              text: "hello",
-              onPressed: () {},
-            ),
-            EXDivider(),
-            EXButton(
-              text: "hello",
-              size: EXSize.small,
-              onPressed: () {},
-            ),
-            EXDivider(),
-            EXButton(
-              text: "hello",
-              isLoading: true,
-              isBlock: false,
-              size: EXSize.mini,
-              onPressed: () {},
-            ),
-            EXDivider(),
-            EXCard(
-              child: Text("123"),
-            ),
-            EXDivider(),
-            EXInputItem(
-              prefix: Icon(
-                CupertinoIcons.add_circled,
-                size: 22,
-              ),
-              label: "标题",
-              hintText: "请输入",
-            ),
-            EXDivider(),
-            EXItem(
-              prefix: Icon(
-                CupertinoIcons.add_circled,
-                size: 22,
-              ),
-              label: "标题",
-              contentText: "内容",
-              suffix: Icon(
-                CupertinoIcons.add_circled,
-                size: 22,
-              ),
-            ),
-          ],
-        ),
+        child: ListView.separated(itemBuilder: (context, index) => componentList.elementAt(index), separatorBuilder: (context, index) => EXDivider(), itemCount: componentList.length),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
