@@ -57,7 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
           const Text("如果你没有发现合适的队伍，你可以在这里创建一个").color(Colors.black54),
         ],
       ),
-      onTap: () {},
+      onTap: () {
+        print("simple_card");
+      },
     ),
     EXCTACard(
       title: "创建一个自己的队伍创建一个自己的队伍",
