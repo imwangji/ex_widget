@@ -5,6 +5,7 @@ import 'package:ex_widget/components/divider/ex_divider.dart';
 import 'package:ex_widget/components/input_item/ex_input_item.dart';
 import 'package:ex_widget/components/item/ex_item.dart';
 import 'package:ex_widget/components/section_header/ex_section_header.dart';
+import 'package:ex_widget/components/simple_card/simple_card.dart';
 import 'package:ex_widget/extensions/text.extension.dart';
 import 'package:ex_widget/themes/ex_default_theme.dart';
 import 'package:flutter/cupertino.dart';
@@ -47,6 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
         exButtonType: EXButtonType.stroke,
         onPressed: () {},
       ),
+    ),
+    SimpleCard(
+      title: "创建一个自己的队伍创建一个自己的队伍",
+      action: CircleAvatar(backgroundColor: Colors.black),
+      footer: Row(
+        children: [
+          const Text("如果你没有发现合适的队伍，你可以在这里创建一个").color(Colors.black54),
+        ],
+      ),
+      onTap: () {},
     ),
     EXCTACard(
       title: "创建一个自己的队伍创建一个自己的队伍",
