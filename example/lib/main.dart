@@ -4,6 +4,7 @@ import 'package:ex_widget/components/cta_card/ex_cta_card.dart';
 import 'package:ex_widget/components/divider/ex_divider.dart';
 import 'package:ex_widget/components/input_item/ex_input_item.dart';
 import 'package:ex_widget/components/item/ex_item.dart';
+import 'package:ex_widget/components/input_box/ex_input_box.dart';
 import 'package:ex_widget/components/section_header/ex_section_header.dart';
 import 'package:ex_widget/components/simple_card/simple_card.dart';
 import 'package:ex_widget/extensions/text.extension.dart';
@@ -39,84 +40,95 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var componentList = [
-    EXSectionHeader(
-      title: "队伍广场",
-      action: EXButton(
-        text: "创建",
-        size: EXSize.small,
-        exButtonType: EXButtonType.stroke,
+  List<Widget> componentList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    componentList = [
+      EXInputBox(
+        label: "姓名",
+        hintText: "请输入",
+        controller: TextEditingController(),
+      ),
+      EXSectionHeader(
+        title: "队伍广场",
+        action: EXButton(
+          text: "创建",
+          size: EXSize.small,
+          exButtonType: EXButtonType.stroke,
+          onPressed: () {},
+        ),
+      ),
+      SimpleCard(
+        title: "创建一个自己的队伍创建一个自己的队伍",
+        action: CircleAvatar(backgroundColor: Colors.black),
+        footer: Row(
+          children: [
+            const Text("如果你没有发现合适的队伍，你可以在这里创建一个").color(Colors.black54),
+          ],
+        ),
+        onTap: () {
+          print("simple_card");
+        },
+      ),
+      EXCTACard(
+        title: "创建一个自己的队伍创建一个自己的队伍",
+        buttonText: "创建",
+        footer: Row(
+          children: [
+            const Text("如果你没有发现合适的队伍，你可以在这里创建一个").color(Colors.black54),
+          ],
+        ),
+        onTap: () {},
+      ),
+      EXDivider(),
+      EXButton(
+        text: "hello",
         onPressed: () {},
       ),
-    ),
-    SimpleCard(
-      title: "创建一个自己的队伍创建一个自己的队伍",
-      action: CircleAvatar(backgroundColor: Colors.black),
-      footer: Row(
-        children: [
-          const Text("如果你没有发现合适的队伍，你可以在这里创建一个").color(Colors.black54),
-        ],
+      EXDivider(),
+      EXButton(
+        text: "hello",
+        size: EXSize.small,
+        onPressed: () {},
       ),
-      onTap: () {
-        print("simple_card");
-      },
-    ),
-    EXCTACard(
-      title: "创建一个自己的队伍创建一个自己的队伍",
-      buttonText: "创建",
-      footer: Row(
-        children: [
-          const Text("如果你没有发现合适的队伍，你可以在这里创建一个").color(Colors.black54),
-        ],
+      EXDivider(),
+      EXButton(
+        text: "hello",
+        isLoading: true,
+        isBlock: false,
+        size: EXSize.mini,
+        onPressed: () {},
       ),
-      onTap: () {},
-    ),
-    EXDivider(),
-    EXButton(
-      text: "hello",
-      onPressed: () {},
-    ),
-    EXDivider(),
-    EXButton(
-      text: "hello",
-      size: EXSize.small,
-      onPressed: () {},
-    ),
-    EXDivider(),
-    EXButton(
-      text: "hello",
-      isLoading: true,
-      isBlock: false,
-      size: EXSize.mini,
-      onPressed: () {},
-    ),
-    EXDivider(),
-    EXCard(
-      child: Text("123"),
-    ),
-    EXDivider(),
-    EXInputItem(
-      prefix: Icon(
-        CupertinoIcons.add_circled,
-        size: 22,
+      EXDivider(),
+      EXCard(
+        child: Text("123"),
       ),
-      label: "标题",
-      hintText: "请输入",
-    ),
-    EXDivider(),
-    EXItem(
-      prefix: Icon(
-        CupertinoIcons.add_circled,
-        size: 22,
+      EXDivider(),
+      EXInputItem(
+        prefix: Icon(
+          CupertinoIcons.add_circled,
+          size: 22,
+        ),
+        label: "标题",
+        hintText: "请输入",
       ),
-      label: "标题",
-      contentText: "内容",
-      suffix: Icon(
-        CupertinoIcons.add_circled,
-        size: 22,
+      EXDivider(),
+      EXItem(
+        prefix: Icon(
+          CupertinoIcons.add_circled,
+          size: 22,
+        ),
+        label: "标题",
+        contentText: "内容",
+        suffix: Icon(
+          CupertinoIcons.add_circled,
+          size: 22,
+        ),
       ),
-    ),
-  ];
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
