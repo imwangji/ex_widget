@@ -7,6 +7,8 @@ class ExAvatarWithBadge extends StatefulWidget {
   final Widget badge;
   final ImageProvider avatar;
   final VoidCallback onTap;
+  final Color? badgeBackground;
+  final Color? avatarBackground;
   const ExAvatarWithBadge({
     super.key,
     this.avatarRadius = 50,
@@ -14,6 +16,8 @@ class ExAvatarWithBadge extends StatefulWidget {
     required this.badge,
     required this.avatar,
     required this.onTap,
+    this.avatarBackground = Colors.black,
+    this.badgeBackground = Colors.black,
   });
 
   @override
@@ -30,7 +34,7 @@ class _ExAvatarWithBadgeState extends State<ExAvatarWithBadge> {
           children: [
             CircleAvatar(
               radius: widget.avatarRadius,
-              backgroundColor: Colors.white,
+              backgroundColor: widget.avatarBackground ?? Colors.white,
               backgroundImage: widget.avatar,
             ),
             Positioned(
@@ -38,6 +42,7 @@ class _ExAvatarWithBadgeState extends State<ExAvatarWithBadge> {
               bottom: 0,
               child: CircleAvatar(
                 radius: widget.badgeRadius,
+                backgroundColor: widget.avatarBackground ?? Colors.white,
                 child: widget.badge,
               ),
             ),
