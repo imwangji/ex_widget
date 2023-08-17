@@ -7,6 +7,7 @@ import 'package:ex_widget/components/item/ex_item.dart';
 import 'package:ex_widget/components/input_box/ex_input_box.dart';
 import 'package:ex_widget/components/section_header/ex_section_header.dart';
 import 'package:ex_widget/components/simple_card/simple_card.dart';
+import 'package:ex_widget/components/avatar_with_badge/ex_avatar_with_badge.dart';
 import 'package:ex_widget/extensions/text.extension.dart';
 import 'package:ex_widget/themes/ex_default_theme.dart';
 import 'package:flutter/cupertino.dart';
@@ -46,6 +47,11 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     componentList = [
+      ExAvatarWithBadge(
+        badge: Icon(Icons.abc),
+        onTap: () {},
+        avatar: Icon(Icons.abc),
+      ),
       EXInputBox(
         label: "姓名",
         hintText: "请输入",
