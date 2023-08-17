@@ -1,4 +1,5 @@
 import 'package:ex_widget/components/card/ex_card.dart';
+import 'package:ex_widget/extensions/padding.extension.dart';
 import 'package:ex_widget/extensions/text.extension.dart';
 import 'package:flutter/material.dart';
 
@@ -35,8 +36,8 @@ class _EXInfoCardAState extends State<EXInfoCardA> {
                 direction: Axis.vertical,
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
-                  Text(e.value).fontSize(18).fontWeight(FontWeight.w600).color(Colors.black.withOpacity(1)),
-                  Text(e.label).fontSize(12).color(Colors.black.withOpacity(.8)),
+                  Text(e.value).fontSize(18).fontWeight(FontWeight.w600).color(Colors.black.withOpacity(1)).pb(3),
+                  Text(e.label).fontSize(12).color(Colors.black.withOpacity(.4)),
                 ],
               ),
             )
