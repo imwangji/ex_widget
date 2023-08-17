@@ -8,6 +8,7 @@ import 'package:ex_widget/components/input_box/ex_input_box.dart';
 import 'package:ex_widget/components/section_header/ex_section_header.dart';
 import 'package:ex_widget/components/simple_card/simple_card.dart';
 import 'package:ex_widget/components/avatar_with_badge/ex_avatar_with_badge.dart';
+import 'package:ex_widget/components/info_card/ex_info_card_a.dart';
 import 'package:ex_widget/extensions/text.extension.dart';
 import 'package:ex_widget/themes/ex_default_theme.dart';
 import 'package:flutter/cupertino.dart';
@@ -47,6 +48,11 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     componentList = [
+      EXInfoCardA(items: [
+        EXInfoCardAItem(label: "队伍", value: "1"),
+        EXInfoCardAItem(label: "打卡", value: "12"),
+        EXInfoCardAItem(label: "被关注", value: "2780"),
+      ]),
       ExAvatarWithBadge(
         badge: Icon(Icons.abc),
         onTap: () {},

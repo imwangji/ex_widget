@@ -5,12 +5,14 @@ class EXCard extends StatefulWidget {
   final Color? borderColor;
   final Color? backgroundColor;
   final VoidCallback? onTap;
+  final EdgeInsets? padding;
   const EXCard({
     super.key,
     required this.child,
     this.borderColor = const Color.fromRGBO(0, 0, 0, 0.08),
     this.backgroundColor = Colors.white,
     this.onTap,
+    this.padding,
   });
 
   @override
@@ -27,7 +29,7 @@ class _EXCardState extends State<EXCard> {
         }
       },
       child: Container(
-        padding: const EdgeInsets.all(16),
+        padding: widget.padding ?? const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: widget.backgroundColor,
           borderRadius: BorderRadius.circular(24),
