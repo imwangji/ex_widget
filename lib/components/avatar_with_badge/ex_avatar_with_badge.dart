@@ -5,7 +5,7 @@ class ExAvatarWithBadge extends StatefulWidget {
   final double? avatarRadius;
   final double? badgeRadius;
   final Widget badge;
-  final Widget avatar;
+  final ImageProvider avatar;
   final VoidCallback onTap;
   const ExAvatarWithBadge({
     super.key,
@@ -31,14 +31,14 @@ class _ExAvatarWithBadgeState extends State<ExAvatarWithBadge> {
             CircleAvatar(
               radius: widget.avatarRadius,
               backgroundColor: Colors.white,
-              child: widget.avatar,
+              backgroundImage: widget.avatar,
             ),
             Positioned(
               right: widget.badgeRadius! / -3,
               bottom: 0,
               child: CircleAvatar(
                 radius: widget.badgeRadius,
-                child: widget.avatar,
+                child: widget.badge,
               ),
             ),
           ],
