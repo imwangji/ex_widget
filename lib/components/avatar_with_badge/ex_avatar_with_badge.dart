@@ -28,25 +28,28 @@ class _ExAvatarWithBadgeState extends State<ExAvatarWithBadge> {
   @override
   Widget build(BuildContext context) {
     return UnconstrainedBox(
-      child: Container(
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            CircleAvatar(
-              radius: widget.avatarRadius,
-              backgroundColor: widget.avatarBackground ?? Colors.white,
-              backgroundImage: widget.avatar,
-            ),
-            Positioned(
-              right: widget.badgeRadius! / -3,
-              bottom: 0,
-              child: CircleAvatar(
-                radius: widget.badgeRadius,
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: Container(
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              CircleAvatar(
+                radius: widget.avatarRadius,
                 backgroundColor: widget.avatarBackground ?? Colors.white,
-                child: widget.badge,
+                backgroundImage: widget.avatar,
               ),
-            ),
-          ],
+              Positioned(
+                right: widget.badgeRadius! / -3,
+                bottom: 0,
+                child: CircleAvatar(
+                  radius: widget.badgeRadius,
+                  backgroundColor: widget.avatarBackground ?? Colors.white,
+                  child: widget.badge,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
