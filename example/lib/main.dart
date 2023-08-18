@@ -5,6 +5,7 @@ import 'package:ex_widget/components/divider/ex_divider.dart';
 import 'package:ex_widget/components/input_item/ex_input_item.dart';
 import 'package:ex_widget/components/item/ex_item.dart';
 import 'package:ex_widget/components/input_box/ex_input_box.dart';
+import 'package:ex_widget/components/search/ex_search_page.dart';
 import 'package:ex_widget/components/section_header/ex_section_header.dart';
 import 'package:ex_widget/components/simple_card/simple_card.dart';
 import 'package:ex_widget/components/avatar_with_badge/ex_avatar_with_badge.dart';
@@ -48,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     componentList = [
+      EXSearchPage(),
       EXInfoCardA(items: [
         EXInfoCardAItem(label: "队伍", value: "1"),
         EXInfoCardAItem(label: "打卡", value: "12"),
