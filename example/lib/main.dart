@@ -49,7 +49,11 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     componentList = [
-      EXSearchPage(),
+      EXSearchPage(
+        state: EXSearchPageState.showSuggestion,
+        suggestionItemBuilder: (p0, p1, index) => Text("搜索建议").color(Colors.black),
+        suggestionCount: 3,
+      ),
       EXInfoCardA(items: [
         EXInfoCardAItem(label: "队伍", value: "1"),
         EXInfoCardAItem(label: "打卡", value: "12"),
