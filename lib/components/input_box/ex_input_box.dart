@@ -10,6 +10,7 @@ class EXInputBox extends StatefulWidget {
   final TextInputAction textInputAction;
   final TextInputType textInputType;
   final int? minLines;
+  final Function(String)? onSubmitted;
   const EXInputBox({
     super.key,
     this.prefix,
@@ -19,6 +20,7 @@ class EXInputBox extends StatefulWidget {
     this.textInputAction = TextInputAction.done,
     this.textInputType = TextInputType.text,
     this.minLines = 1,
+    this.onSubmitted,
   });
 
   @override
@@ -48,6 +50,7 @@ class _EXInputBoxState extends State<EXInputBox> {
               controller: widget.controller,
               textInputAction: widget.textInputAction,
               keyboardType: widget.textInputType,
+              onSubmitted: widget.onSubmitted,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 isDense: true,
