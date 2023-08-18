@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ExAvatarWithBadge(
         badge: Icon(Icons.abc),
         onTap: () {},
-        avatar: Icon(Icons.abc),
+        avatar: AssetImage("assets/images/avatar.jpeg"),
       ),
       EXInputBox(
         label: "姓名",
