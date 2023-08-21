@@ -49,6 +49,13 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     componentList = [
+      EXCard(
+        padding: EdgeInsets.zero,
+        child: EXItem(
+          label: "学校",
+          contentText: "请选择",
+        ),
+      ),
       EXSearchPage(
         state: EXSearchPageState.showSuggestion,
         suggestionItemBuilder: (p0, p1, index) => Text("搜索建议").color(Colors.black),

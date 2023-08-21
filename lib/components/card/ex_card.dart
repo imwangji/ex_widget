@@ -29,6 +29,7 @@ class _EXCardState extends State<EXCard> {
         }
       },
       child: Container(
+        clipBehavior: Clip.hardEdge,
         padding: widget.padding ?? const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: widget.backgroundColor,
