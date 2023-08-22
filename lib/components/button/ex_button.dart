@@ -172,7 +172,7 @@ class _EXButtonState extends State<EXButton> {
           ),
         ),
       ),
-      onPressed: () {},
+      onPressed: widget.onPressed,
       child: renderContent(),
     );
   }
